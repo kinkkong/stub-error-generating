@@ -1,0 +1,60 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"  xmlns:tns="http://haos.io/gant/service"
+           targetNamespace="http://haos.io/gant/service" elementFormDefault="qualified"
+           xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+           xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+           jaxb:version="2.0"
+           jaxb:extensionBindingPrefixes="xjc">
+
+    <xs:annotation>
+        <xs:appinfo>
+            <jaxb:globalBindings fixedAttributeAsConstantProperty="true">
+                <xjc:javaType name="java.util.Calendar" parseMethod="javax.xml.bind.DatatypeConverter.parseDate"
+                               printMethod="javax.xml.bind.DatatypeConverter.printDate"
+                               xmlType="xs:date"></xjc:javaType>
+            </jaxb:globalBindings>
+
+        </xs:appinfo>
+    </xs:annotation>
+
+    <xs:element name="getFlightRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="flightId" type="xs:string"/>
+                <xs:element name="flightDate" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getFlightResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="service" type="tns:serviceList"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="serviceList">
+        <xs:sequence>
+            <xs:element name="flightService" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="name" type="xs:string"/>
+                        <xs:element name="desc" type="xs:string"/>
+                        <xs:element name="startDate" type="xs:date"/>
+                        <xs:element name="endDate" type="xs:date"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <!--<xs:simpleType name="currency">-->
+    <!--<xs:restriction base="xs:string">-->
+    <!--<xs:enumeration value="GBP"/>-->
+    <!--<xs:enumeration value="EUR"/>-->
+    <!--<xs:enumeration value="PLN"/>-->
+    <!--</xs:restriction>-->
+    <!--</xs:simpleType>-->
+
+</xs:schema>

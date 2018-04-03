@@ -18,7 +18,8 @@ package hello;
 
 import static org.assertj.core.api.Assertions.*;
 
-import io.spring.guides.gs_producing_web_service.GetCountryRequest;
+
+import io.haos.gant.service.GetCountryRequest;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
