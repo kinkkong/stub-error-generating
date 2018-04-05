@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import io.haos.gant.service.ServiceList;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDateTime;
 import java.util.*;
 
 @Component
@@ -12,13 +13,15 @@ public class FlightRepository {
     Map<String, List<ServiceList.FlightService>> flightServicesList = new HashMap();
     List<String> namesOfServicesAvailable = Arrays.asList("ASER", "BSER", "CSER", "DSER");
 
-    List<ServiceList.FlightService> findFligh(String flightId){
+    ServiceList findListOfServices(String flightId){
+
+        ServiceList serviceList = new ServiceList();
 
         if(flightServicesList.containsKey(flightId)){
-            return flightServicesList.get(flightId);
+            List<ServiceList.FlightService> flightServices = flightServicesList.get(flightId);
         }
 
-        return createFlightData(flightId);
+        return new ServiceList();
 
     }
 
@@ -29,8 +32,8 @@ public class FlightRepository {
         String nameOfService = namesOfServicesAvailable.get(ran.nextInt(namesOfServicesAvailable.size()));
 
         ServiceList.FlightService flightService = new ServiceList.FlightService();
-        flightService.setStartDate(new Date());
-        flightService.setEndDate(new Date());
+        flightService.setStartDate(LocalDateTime.now());
+        flightService.setEndDate(LocalDateTime.now().plusHours(1l));
         flightService.setName(nameOfService);
 
         listOfServices.add(flightService);

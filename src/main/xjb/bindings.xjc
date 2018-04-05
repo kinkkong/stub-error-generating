@@ -12,8 +12,8 @@
         <jaxb:javaType
             name="java.time.LocalDateTime"
             xmlType="xs:dateTime"
-            parseMethod="org.example.util.LocalDateAdapter.unmarshal"
-            printMethod="org.example.util.LocalDateAdapter.marshal" />
+            parseMethod="utils.LocalDateAdapter.unmarshal"
+            printMethod="utils.LocalDateAdapter.marshal" />
     </jaxb:globalBindings>
 
  </jaxb:bindings>

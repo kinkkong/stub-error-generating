@@ -5,16 +5,17 @@
            jaxb:version="2.0"
            jaxb:extensionBindingPrefixes="xjc">
 
-    <xs:annotation>
-        <xs:appinfo>
-            <jaxb:globalBindings fixedAttributeAsConstantProperty="true">
-                <xjc:javaType name="java.util.Calendar" parseMethod="javax.xml.bind.DatatypeConverter.parseDate"
-                               printMethod="javax.xml.bind.DatatypeConverter.printDate"
-                               xmlType="xs:date"></xjc:javaType>
-            </jaxb:globalBindings>
+    <!--<xs:annotation>-->
+        <!--<xs:appinfo>-->
+            <!--<jaxb:globalBindings fixedAttributeAsConstantProperty="true">-->
+                <!--<xjc:javaType  name="java.util.Calendar" parseMethod="javax.xml.bind.DatatypeConverter.parseDate"-->
+                               <!--printMethod="javax.xml.bind.DatatypeConverter.printDate"-->
+                               <!--xmlType="xs:date"></xjc:javaType>-->
+            <!--</jaxb:globalBindings>-->
+        <!--</xs:appinfo>-->
+    <!--</xs:annotation>-->
 
-        </xs:appinfo>
-    </xs:annotation>
+
 
     <xs:element name="getFlightRequest">
         <xs:complexType>
@@ -40,8 +41,8 @@
                     <xs:sequence>
                         <xs:element name="name" type="xs:string"/>
                         <xs:element name="desc" type="xs:string"/>
-                        <xs:element name="startDate" type="xs:date"/>
-                        <xs:element name="endDate" type="xs:date"/>
+                        <xs:element name="startDate" type="xs:dateTime"/>
+                        <xs:element name="endDate" type="xs:dateTime"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
