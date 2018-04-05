@@ -22,8 +22,8 @@ public class FlightServicesEndpoint {
     public GetFlightResponse getFlightServices(@RequestPayload GetFlightRequest request) {
         GetFlightResponse response = new GetFlightResponse();
 
-        ServiceList setvice = flightRepository.findListOfServices(request.getFlightId());
-        response.setService((ServiceList) setvice);
+        List<ServiceList.FlightService> listOfServices = flightRepository.findListOfServices(request.getFlightId());
+        response.getService().getFlightService().addAll(listOfServices);
 
         return response;
     }

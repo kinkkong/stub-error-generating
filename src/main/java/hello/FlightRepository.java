@@ -13,15 +13,16 @@ public class FlightRepository {
     Map<String, List<ServiceList.FlightService>> flightServicesList = new HashMap();
     List<String> namesOfServicesAvailable = Arrays.asList("ASER", "BSER", "CSER", "DSER");
 
-    ServiceList findListOfServices(String flightId){
+    List<ServiceList.FlightService> findListOfServices(String flightId){
 
         ServiceList serviceList = new ServiceList();
 
         if(flightServicesList.containsKey(flightId)){
-            List<ServiceList.FlightService> flightServices = flightServicesList.get(flightId);
+            return flightServicesList.get(flightId);
         }
 
-        return new ServiceList();
+        return createFlightData(flightId);
+
 
     }
 
