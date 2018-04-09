@@ -1,0 +1,10 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:gs="http://haos.io/gant/flights">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <gs:getFlightRequest>
+	      <gs:flightId>Spain</gs:flightId>
+	      <gs:flightDate>test</gs:flightDate>
+      </gs:getFlightRequest>
+   </soapenv:Body>
+</soapenv:Envelope>

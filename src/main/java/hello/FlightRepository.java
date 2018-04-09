@@ -1,7 +1,7 @@
 package hello;
 
 import com.google.common.collect.Lists;
-import io.haos.gant.service.ServiceList;
+import io.haos.gant.flights.ServiceList;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
@@ -14,8 +14,6 @@ public class FlightRepository {
     List<String> namesOfServicesAvailable = Arrays.asList("ASER", "BSER", "CSER", "DSER");
 
     List<ServiceList.FlightService> findListOfServices(String flightId){
-
-        ServiceList serviceList = new ServiceList();
 
         if(flightServicesList.containsKey(flightId)){
             return flightServicesList.get(flightId);

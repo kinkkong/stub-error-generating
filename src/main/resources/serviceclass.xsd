@@ -1,21 +1,9 @@
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"  xmlns:tns="http://haos.io/gant/service"
-           targetNamespace="http://haos.io/gant/service" elementFormDefault="qualified"
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"  xmlns:tns="http://haos.io/gant/flights"
+           targetNamespace="http://haos.io/gant/flights" elementFormDefault="qualified"
            xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
            xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
            jaxb:version="2.0"
            jaxb:extensionBindingPrefixes="xjc">
-
-    <!--<xs:annotation>-->
-        <!--<xs:appinfo>-->
-            <!--<jaxb:globalBindings fixedAttributeAsConstantProperty="true">-->
-                <!--<xjc:javaType  name="java.util.Calendar" parseMethod="javax.xml.bind.DatatypeConverter.parseDate"-->
-                               <!--printMethod="javax.xml.bind.DatatypeConverter.printDate"-->
-                               <!--xmlType="xs:date"></xjc:javaType>-->
-            <!--</jaxb:globalBindings>-->
-        <!--</xs:appinfo>-->
-    <!--</xs:annotation>-->
-
-
 
     <xs:element name="getFlightRequest">
         <xs:complexType>

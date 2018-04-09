@@ -10,8 +10,9 @@ import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 
 
 
-@Endpoint
+//@Endpoint
 public class CountryEndpoint {
+
 	private static final String NAMESPACE_URI = "http://haos.io/gant/service";
 
 	private CountryRepository countryRepository;

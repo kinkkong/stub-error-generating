@@ -21,6 +21,7 @@ import static org.assertj.core.api.Assertions.*;
 
 import io.haos.gant.service.GetCountryRequest;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -47,6 +48,7 @@ public class ApplicationIntegrationTests {
     }
 
     @Test
+    @Ignore
     public void testSendAndReceive() {
         WebServiceTemplate ws = new WebServiceTemplate(marshaller);
         GetCountryRequest request = new GetCountryRequest();
