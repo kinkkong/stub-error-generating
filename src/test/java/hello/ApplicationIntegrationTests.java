@@ -19,7 +19,7 @@ package hello;
 import static org.assertj.core.api.Assertions.*;
 
 
-import io.haos.gant.service.GetCountryRequest;
+import io.haos.gant.flights.GetFlightRequest;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -43,7 +43,7 @@ public class ApplicationIntegrationTests {
 
     @Before
     public void init() throws Exception {
-        marshaller.setPackagesToScan(ClassUtils.getPackageName(GetCountryRequest.class));
+        marshaller.setPackagesToScan(ClassUtils.getPackageName(GetFlightRequest.class));
         marshaller.afterPropertiesSet();
     }
 
@@ -51,8 +51,9 @@ public class ApplicationIntegrationTests {
     @Ignore
     public void testSendAndReceive() {
         WebServiceTemplate ws = new WebServiceTemplate(marshaller);
-        GetCountryRequest request = new GetCountryRequest();
-        request.setName("Spain");
+        GetFlightRequest request = new GetFlightRequest();
+        request.setFlightDate("Spain");
+        request.setFlightDate("2018-12-10");
 
         assertThat(ws.marshalSendAndReceive("http://localhost:"
                 + port + "/ws", request)).isNotNull();

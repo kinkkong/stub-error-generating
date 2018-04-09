@@ -1,5 +1,5 @@
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
-	xmlns:gs="http://haos.io/gant/flights">
+	xmlns:gs="flightsSchema.xsd">
    <soapenv:Header/>
    <soapenv:Body>
       <gs:getFlightRequest>
